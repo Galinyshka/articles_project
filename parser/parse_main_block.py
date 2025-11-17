@@ -196,12 +196,14 @@ def extract_article_info(soup):
     td_elements = soup.find_all('td', width="574")
 
     # Вспомогательная функция: ищет значение после определённой текстовой метки
-    def extract_data_after_label(element, label_text):
-        label_node = element.find(string=re.compile(rf'\s*{re.escape(label_text)}\s*'))
-        if label_node:
-            font_tag = label_node.find_next_sibling('font')
-            if font_tag:
-                return font_tag.string.strip()
+    def extract_data_after_label(element, *label_texts):
+        for label_text in label_texts:
+            # Ищем метку с учётом пробелов
+            label_node = element.find(string=re.compile(rf'\s*{re.escape(label_text)}\s*'))
+            if label_node:
+                font_tag = label_node.find_next_sibling('font')
+                if font_tag and font_tag.string:
+                    return font_tag.string.strip()
         return None
 
     # Перебираем все найденные ячейки таблицы
@@ -217,7 +219,7 @@ def extract_article_info(soup):
             language = current_lang
             
         # Ищем год публикации (может встречаться в разных местах)
-        current_year = extract_data_after_label(td, "Год:")
+        current_year = extract_data_after_label(td, "Год:", "Год издания:", "Год публикации:")
         if current_year:
             year = current_year
     
