@@ -1,0 +1,50 @@
+{
+    "type": "object",
+    "properties": {
+        "chain of thoughts": {"type": "string"},
+        "class": {
+            "enum": [
+                "Distant Education & Online Learning",
+                "Digital Economy",
+                "Renewable & Green Energy",
+                "Income & Growth Inequality",
+                "Applied Neural Networks & Deep Learning",
+                "Global Economic Relations",
+                "Taxation & Fiscal Policy",
+                "Industrial Competitiveness & Corporate Strategy",
+                "Social Media & Intercultural Communication Analysis",
+                "Healthcare Systems",
+                "Agriculture Industry & Environmental Monitoring",
+                "Russian & Soviet History",
+                "Transportation Infrastructure & Smart Cities",
+                "Russian Macroeconomics & Regional Development",
+                "Mathematical, Nonlinear & Fuzzy Modeling",
+                "Supply Chain Management & Public-Private Partnerships",
+                "Governance, Public Administration & Legal Policy",
+                "Human Capital & Intellectual Capital",
+                "Forecasting Models & Strategic Financial Performance",
+                "Tourism, Regions & Urban Sustainability",
+                "Student Sports & Sports Economics",
+                "Philosophy & Religion",
+                "Digital Currencies & Blockchain Finance",
+                "Insurance, Welfare & Internal Financial Control",
+                "Material Science & Geological & Electrical Modeling",
+                "Financial Sector Stability & Risk Management",
+                "Banking Technology & Investment Portfolios",
+                "Linguistics & Foreign Language Learning",
+                "Corporate Reporting & Sustainability",
+                "Green Consumerism, Circular Economy & Waste Management",
+                "Cybersecurity",
+                "Russian Migration & Demographics",
+                "Russian Family Law",
+                "Higher Education & Educational Technologies",
+                "Coal, Electricity & Energy Industry",
+                "Algebraic & Geometric Structures",
+                "Machine learning in Finance & Financial Technology",
+                "Arctic Development",
+                "COVID-19 & Pandemic Impact"
+            ]
+        }
+    },
+    "required": ["chain of thoughts", "class"]
+}

@@ -1,0 +1,1 @@
+Your main task is to choose the most suitable class for given article.

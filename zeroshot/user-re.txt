@@ -1,0 +1,20 @@
+A list of possible classes. 
+```json
+{{ labels }}
+```
+The defininition of class "None" is: that there is insufficient information to establish membership in the remaining classes.
+You have to determine the class according to the title, abstract and keywords of the current article. 
+
+Current article:
+```json
+{{ plot }}
+```
+Preliminary result for the task is presented below.
+```
+json
+{{ previous }}
+```
+
+First, provide a chain of thought for finding the most suitable class and correcting preliminary results.
+After that, provide a correction if necessary, and only if it differs from the previously selected class.
+Then, provide the final class for the current article.

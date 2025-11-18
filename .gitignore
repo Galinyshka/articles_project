@@ -7,3 +7,5 @@ venv/
 .DS_Store
 .idea/
 data/
+zeroshot/data/
+zeroshot/__pycache__/
