@@ -39,6 +39,7 @@ class PrettyLogger:
         self._log("critical", message)
 
 logger = PrettyLogger("MyLogger")
+
 # Example usage
 if __name__ == "__main__":
     logger.debug("This is a debug message.")
