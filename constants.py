@@ -1,6 +1,13 @@
 CAT_COLUMNS = ['article_type', 'year', 'language', 'OECD', 'first_OECD']
 NUMERIC_COLUMNS = ['eLIBRARY ID', 'year', 'Цитирования']
 
+COLUMNS_RENAME = {
+    'eLIBRARY ID': 'ID',
+    'title_en': 'title',
+    'abstract_en': 'abstract',
+    'key_words_en': 'keywords'
+}
+
 FIRST_LEVEL = {'Natural Sciences':['Mathematics', 'Computer and information sciences', 'Physical sciences and astronomy', 'Chemical sciences', 'Earth and related environmental sciences', 'Biological sciences', 'Other natural sciences'],
                  'Engineering and Technology':['Civil engineering', 'Electrical engineering, electronic engineering', 'Mechanical engineering', 'Chemical engineering', 'Materials engineering', 'Medical engineering', 'Environmental engineering', 'Environmental biotechnology', 'Industrial biotechnology', 'Nano-technology', 'Other engineering and technologies'],
                  'Medical and Health Sciences': ['Basic medical research', 'Clinical medicine', 'Health sciences', 'Other medical sciences'],

@@ -36,7 +36,7 @@ def correct_answer(answer, schema, plot, labels):
 
 
 def loop(n_steps=1):
-    with open('zeroshot/zeroshot_topics.json', "r") as f:
+    with open('zeroshot/zeroshot_topics_1.json', "r") as f:
         labels = list(json.load(f).values())
 
     schema = {

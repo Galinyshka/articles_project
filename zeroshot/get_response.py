@@ -2,6 +2,7 @@ import requests
 import json
 import traceback
 from logger import PrettyLogger
+from config import SERVER_URL
 
 logger = PrettyLogger("mylogger")
 
@@ -9,7 +10,7 @@ def send_request_to_llama_server(
     system_prompt,
     user_prompt=None,
     json_mode=False,
-    server_url="http://localhost:8000/v1/chat/completions",
+    server_url=SERVER_URL,
     schema=None,
     max_tokens=6000,
     temperature=0.7,
