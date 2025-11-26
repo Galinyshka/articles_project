@@ -1,0 +1,20 @@
+You are given a list of possible classification labels:
+
+```json
+{{ labels }}
+```
+
+The label `"None"` should be selected only when there is insufficient information to confidently assign the article to any of the other classes.
+
+Your task is to determine the most appropriate class for the following article, based on its title, abstract, and keywords:
+
+```json
+{{ plot }}
+```
+
+Start by providing a detailed chain of thought explaining how you evaluate the article content against the list of classes. Consider what features or keywords suggest inclusion or exclusion from specific categories.
+
+Based on your reasoning, assign the most suitable class from the list.
+
+   * If no class fits the article due to lack of sufficient information, select "None".
+

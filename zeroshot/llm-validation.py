@@ -5,6 +5,8 @@ import os
 from formatter import render_template
 from logger import logger
 
+TEST_ROOT = 'zeroshot/data/test/'
+TRAIN_ROOT = 'zeroshot/data/train/'
 
 def request_validation():
     system_template_name = "system.txt"
@@ -35,8 +37,12 @@ def correct_answer(answer, schema, plot, labels):
     return resp
 
 
-def loop(n_steps=1):
-    with open('zeroshot/zeroshot_topics_1.json', "r") as f:
+def loop(file_name, level, test=True, n_steps=1):
+    
+    data_root = TEST_ROOT if test else TRAIN_ROOT
+    file_path = os.path.join(data_root, f'{file_name}.json')
+
+    with open(f'zeroshot/data/zeroshot_topics_{level}.json', "r") as f:
         labels = list(json.load(f).values())
 
     schema = {
@@ -51,9 +57,9 @@ def loop(n_steps=1):
     system_prompt = render_template("system.txt")
 
     # Открываем файл для дозаписи
-    out_file_path = "zeroshot/all_preds.jsonl"
+    out_file_path = os.path.join(data_root, f"pred_{file_name}.jsonl")
 
-    with open("zeroshot/all_articles.json", "r") as f:
+    with open(file_path, "r") as f:
         articles = json.load(f)
 
         for idx, article in enumerate(articles):
@@ -81,4 +87,4 @@ def loop(n_steps=1):
 
 
 if __name__ == "__main__":
-    loop()
+    loop('test', level=1, test=True, n_steps=1)

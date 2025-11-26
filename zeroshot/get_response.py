@@ -30,7 +30,7 @@ def send_request_to_llama_server(
         "messages": history,
         "max_tokens": max_tokens,
         "temperature": temperature,
-        "max_new_tokens": 2000,
+        "max_new_tokens": 1024,
         "stream": True
     }
 

@@ -1,0 +1,25 @@
+sudo docker run --gpus all -it \
+    -v /home/galinyshka/models/llama:/models \
+    -v /home/galinyshka/code/articles_project/zeroshot/schema.json:/schema.json \
+    -p 8000:8000 \
+    ghcr.io/ggml-org/llama.cpp:server-cuda \
+    -m /models/llama-7b.Q4_K_M.gguf \
+    --port 8000 \
+    --host 0.0.0.0 \
+    -n 1024 \
+    --cache-ram 0
+
+
+025-11-25 03:02:39 INFO ID: 52656320, Predicted label: Engineering and Technology
+2025-11-25 03:02:39 INFO Sending request to http://localhost:8000/v1/chat/completions
+2025-11-25 03:02:39 INFO Received response with status code: 400
+2025-11-25 03:02:39 ERROR Request failed with status code 400: {"error":{"code":400,"message":"the request exceeds 
+the available context size, try increasing 
+it","type":"exceed_context_size_error","n_prompt_tokens":3515,"n_ctx":2048}}
+Traceback (most recent call last):
+  File "/home/galinyshka/code/articles_project/zeroshot/llm-validation.py", line 90, in <module>
+    loop('test', level=1, test=True, n_steps=1)
+  File "/home/galinyshka/code/articles_project/zeroshot/llm-validation.py", line 70, in loop
+    pred_label = resp.get('class', None)
+                 ^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
