@@ -1,7 +1,6 @@
 import logging as logger
 from jinja2 import Environment, FileSystemLoader
 
-# Configure logging
 
 def render_template(template_name, **context):
     # Log the context to verify it contains the 'scenes' key

@@ -1,20 +1,19 @@
-A list of possible classes. 
+You are given a list of possible classification labels:
 ```json
 {{ labels }}
 ```
-The defininition of class "None" is: that there is insufficient information to establish membership in the remaining classes.
-You have to determine the class according to the title, abstract and keywords of the current article. 
-
-Current article:
+Your task is to determine the most appropriate class for the following article based on its title, abstract, and keywords:
 ```json
 {{ plot }}
 ```
-Preliminary result for the task is presented below.
+The preliminary classification results for this article is provided below:
 ```
 json
 {{ previous }}
 ```
 
-First, provide a chain of thought for finding the most suitable class and correcting preliminary results.
-After that, provide a correction if necessary, and only if it differs from the previously selected class.
-Then, provide the final class for the current article.
+1. Carefully analyze the title, abstract, keywords of the article.
+2. Compare the features of the article (e.g., topics, methods, domains, target population, and named entities) against the provided labels.
+3. Evaluate the preliminary results and determine whether it is correct. If it is incorrect, provide a correction and explain why.
+4. Provide a concise and logical explanation (chain of thought) for your decision. Avoid repeating the same phrases or words. Be clear and specific.
+5. Assign the final class for the article. If no class fits due to insufficient information, select "None" and explain what information is missing.

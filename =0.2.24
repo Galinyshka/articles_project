@@ -1,23 +1,0 @@
-Collecting ctransformers
-  Downloading ctransformers-0.2.27-py3-none-any.whl.metadata (17 kB)
-Requirement already satisfied: huggingface-hub in ./.venv/lib/python3.12/site-packages (from ctransformers) (0.36.0)
-Collecting py-cpuinfo<10.0.0,>=9.0.0 (from ctransformers)
-  Downloading py_cpuinfo-9.0.0-py3-none-any.whl.metadata (794 bytes)
-Requirement already satisfied: filelock in ./.venv/lib/python3.12/site-packages (from huggingface-hub->ctransformers) (3.20.0)
-Requirement already satisfied: fsspec>=2023.5.0 in ./.venv/lib/python3.12/site-packages (from huggingface-hub->ctransformers) (2025.10.0)
-Requirement already satisfied: packaging>=20.9 in ./.venv/lib/python3.12/site-packages (from huggingface-hub->ctransformers) (25.0)
-Requirement already satisfied: pyyaml>=5.1 in ./.venv/lib/python3.12/site-packages (from huggingface-hub->ctransformers) (6.0.3)
-Requirement already satisfied: requests in ./.venv/lib/python3.12/site-packages (from huggingface-hub->ctransformers) (2.32.5)
-Requirement already satisfied: tqdm>=4.42.1 in ./.venv/lib/python3.12/site-packages (from huggingface-hub->ctransformers) (4.67.1)
-Requirement already satisfied: typing-extensions>=3.7.4.3 in ./.venv/lib/python3.12/site-packages (from huggingface-hub->ctransformers) (4.15.0)
-Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in ./.venv/lib/python3.12/site-packages (from huggingface-hub->ctransformers) (1.2.0)
-Requirement already satisfied: charset_normalizer<4,>=2 in ./.venv/lib/python3.12/site-packages (from requests->huggingface-hub->ctransformers) (3.4.4)
-Requirement already satisfied: idna<4,>=2.5 in ./.venv/lib/python3.12/site-packages (from requests->huggingface-hub->ctransformers) (3.11)
-Requirement already satisfied: urllib3<3,>=1.21.1 in ./.venv/lib/python3.12/site-packages (from requests->huggingface-hub->ctransformers) (2.5.0)
-Requirement already satisfied: certifi>=2017.4.17 in ./.venv/lib/python3.12/site-packages (from requests->huggingface-hub->ctransformers) (2025.10.5)
-Downloading ctransformers-0.2.27-py3-none-any.whl (9.9 MB)
-[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/9.9 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.5/9.9 MB[0m [31m4.0 MB/s[0m eta [36m0:00:03[0m[2K   [91m━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.3/9.9 MB[0m [31m3.9 MB/s[0m eta [36m0:00:03[0m[2K   [91m━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m2.4/9.9 MB[0m [31m4.5 MB/s[0m eta [36m0:00:02[0m[2K   [91m━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.4/9.9 MB[0m [31m4.8 MB/s[0m eta [36m0:00:02[0m[2K   [91m━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━[0m [32m4.5/9.9 MB[0m [31m4.9 MB/s[0m eta [36m0:00:02[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━[0m [32m5.8/9.9 MB[0m [31m5.0 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━[0m [32m6.8/9.9 MB[0m [31m5.1 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m8.1/9.9 MB[0m [31m5.2 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━[0m [32m8.9/9.9 MB[0m [31m5.2 MB/s[0m eta [36m0:00:01[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m [32m9.7/9.9 MB[0m [31m5.0 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m9.9/9.9 MB[0m [31m4.7 MB/s[0m  [33m0:00:02[0m
-[?25hDownloading py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
-Installing collected packages: py-cpuinfo, ctransformers
-[?25l[2K   [91m━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━[0m [32m1/2[0m [ctransformers][2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m2/2[0m [ctransformers]
-[?25h[1A[2KSuccessfully installed ctransformers-0.2.27 py-cpuinfo-9.0.0
