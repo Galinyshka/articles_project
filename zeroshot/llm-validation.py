@@ -39,7 +39,10 @@ def loop(file_name, level, test=True, n_steps=1):
     file_path = os.path.join(data_root, f'{file_name}.json')
 
     with open(f'zeroshot/data/zeroshot_topics_{level}.json', "r") as f:
-        labels = list(json.load(f).values())
+        if level == 1:
+            labels = list(json.load(f).values())
+        else:
+            labels = list(json.load(f)[file_name[-1]].values())
 
     schema = {
         "type": "object",
@@ -53,7 +56,7 @@ def loop(file_name, level, test=True, n_steps=1):
     system_prompt = render_template("system.txt")
 
     # Открываем файл для дозаписи
-    out_file_path = os.path.join(data_root, f"pred_{file_name}.jsonl")
+    out_file_path = os.path.join(data_root, f"pred_extra_{file_name}.jsonl")
     with open(file_path, "r") as f:
         articles = json.load(f)
 
@@ -115,4 +118,5 @@ def loop(file_name, level, test=True, n_steps=1):
 
 
 if __name__ == "__main__":
-    loop('train', level=1, test=False, n_steps=4)
+    loop(f'test', level=1, test=True, n_steps=6)
+    loop(f'train', level=1, test=False, n_steps=6)

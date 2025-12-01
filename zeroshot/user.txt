@@ -7,6 +7,13 @@ Your task is to determine the most appropriate class for the following article b
 ```json
 {{ plot }}
 ```
+Also use extra information about labels:
+IT and Natural Sciences is about Mathematics, Computer and information sciences, Physical sciences and astronomy, Chemical sciences, Earth and related environmental sciences, Biological sciences
+Engineering is about Civil engineering, Electrical engineering, electronic engineering, Mechanical engineering, Chemical engineering, Materials engineering, Medical engineering, Environmental engineering, Environmental biotechnology
+Medical and Health Sciences is about Basic medical research, Clinical medicine, Health sciences
+Agricultural Sciences is about Agriculture, forestry, fisheries, Animal and dairy science, Veterinary science
+Social Sciences is about Psychology, Economics and business, Educational sciences, Sociology, Law, Political science, Social and economic geography, Media and communication
+Humanities is about History and archaeology, Languages and literature, Philosophy, ethics and religion, Art
 
 Follow these steps:
 
