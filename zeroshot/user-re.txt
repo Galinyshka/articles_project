@@ -11,17 +11,17 @@ The preliminary classification results for this article is provided below:
 json
 {{ previous }}
 ```
-Also use extra information about labels:
-IT and Natural Sciences is about Mathematics, Computer and information sciences, Physical sciences and astronomy, Chemical sciences, Earth and related environmental sciences, Biological sciences
-Engineering and Technology is about Civil engineering, Electrical engineering, electronic engineering, Mechanical engineering, Chemical engineering, Materials engineering, Medical engineering, Environmental engineering, Environmental biotechnology
-Medical and Health Sciences is about Basic medical research, Clinical medicine, Health sciences
-Agricultural Sciences is about Agriculture, forestry, fisheries, Animal and dairy science, Veterinary science
-Social Sciences is about Psychology, Economics and business, Educational sciences, Sociology, Law, Political science, Social and economic geography, Media and communication
-Humanities is about History and archaeology, Languages and literature, Philosophy, ethics and religion, Art
+Rules (choose exactly one label):
+IT and Natural Sciences — mathematics, computer & information sciences, physical sciences, astronomy, chemistry, earth/environmental sciences, biology.
+Engineering and Technology — civil, electrical/electronic, mechanical, chemical, materials, medical, environmental engineering; environmental biotechnology.
+Medical and Health Sciences — basic medical research, clinical medicine, diagnostics, treatment, public health.
+Agricultural Sciences (rare) — choose only if the text clearly discusses agriculture, crops, forestry, fisheries, livestock, dairy/animal science, or veterinary topics.
+Social Sciences (most common) — psychology, economics & business, education, sociology, law, politics, geography, media. If unsure, choose Social Sciences.
+Humanities — history, archaeology, literature, languages, philosophy, religion, art, culture.
 
-Follow these steps: 
-1. Carefully analyze the title, abstract, keywords of the article.
-2. Compare the features of the article (e.g., topics, methods, domains, target population, and named entities) against the provided labels.
-3. Evaluate the preliminary results and determine whether it is correct. If it is incorrect, provide a correction and explain why.
-4. Provide a concise and logical explanation (chain of thought) for your decision. Avoid repeating the same phrases or words. Be clear and specific.
-5. Assign the final class for the article. If no class fits due to insufficient information, select "None" and explain what information is missing.
+Follow these steps:
+Read the article (title, abstract, keywords).
+Compare its main topics and methods to the label definitions above.
+Check whether the preliminary label is correct; if not, propose a correction and say why.
+Provide a brief, concrete justification for your final choice (no internal chain-of-thought).
+Return the result in the JSON format shown below.

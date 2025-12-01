@@ -7,18 +7,17 @@ Your task is to determine the most appropriate class for the following article b
 ```json
 {{ plot }}
 ```
-Also use extra information about labels:
-IT and Natural Sciences is about Mathematics, Computer and information sciences, Physical sciences and astronomy, Chemical sciences, Earth and related environmental sciences, Biological sciences
-Engineering is about Civil engineering, Electrical engineering, electronic engineering, Mechanical engineering, Chemical engineering, Materials engineering, Medical engineering, Environmental engineering, Environmental biotechnology
-Medical and Health Sciences is about Basic medical research, Clinical medicine, Health sciences
-Agricultural Sciences is about Agriculture, forestry, fisheries, Animal and dairy science, Veterinary science
-Social Sciences is about Psychology, Economics and business, Educational sciences, Sociology, Law, Political science, Social and economic geography, Media and communication
-Humanities is about History and archaeology, Languages and literature, Philosophy, ethics and religion, Art
+Rules (choose exactly one label):
+IT and Natural Sciences — mathematics, computer & information sciences, physical sciences, astronomy, chemistry, earth/environmental sciences, biology.
+Engineering and Technology — civil, electrical/electronic, mechanical, chemical, materials, medical, environmental engineering; environmental biotechnology.
+Medical and Health Sciences — basic medical research, clinical medicine, diagnostics, treatment, public health.
+Agricultural Sciences (very rare) — choose only if the text clearly discusses agriculture, crops, forestry, fisheries, livestock, dairy/animal science, or veterinary topics.
+Social Sciences (most common) — psychology, economics & business, education, sociology, law, politics, geography, media. If unsure, choose Social Sciences.
+Humanities — history, archaeology, literature, languages, philosophy, religion, art, culture.
 
 Follow these steps:
-
-1. Carefully analyze the title, abstract, and keywords.
-2. Identify salient topics, methods, domains, target population, and named entities from the text.
-3. Compare these features against each candidate label and decide which label best matches the article content.
-4. Provide a concise and transparent justification. Include a short summary of the main reasons and a list of explicit text excerpts or keywords used as evidence.
-5. Select exactly one label from the provided labels. Only choose "None" when the title, abstract, and keywords lack sufficient information (e.g., missing key details, vague descriptions, or irrelevant content) to confidently assign any given label. Clearly explain why the information is insufficient.
+Read the article (title, abstract, keywords).
+Compare its main topics and methods to the label definitions above.
+Check whether the preliminary label is correct; if not, propose a correction and say why.
+Provide a brief, concrete justification for your final choice (no internal chain-of-thought).
+Return the result in the JSON format shown below.

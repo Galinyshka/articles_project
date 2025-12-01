@@ -56,11 +56,11 @@ def loop(file_name, level, test=True, n_steps=1):
     system_prompt = render_template("system.txt")
 
     # Открываем файл для дозаписи
-    out_file_path = os.path.join(data_root, f"pred_extra_{file_name}.jsonl")
+    out_file_path = os.path.join(data_root, f"pred_instruction_{file_name}.jsonl")
     with open(file_path, "r") as f:
         articles = json.load(f)
 
-        start_processing = False  
+        #start_processing = False  
 
         for idx, article in enumerate(articles):
 
@@ -93,7 +93,7 @@ def loop(file_name, level, test=True, n_steps=1):
                 last_class = predicted_classes[-1]['class']
                 predicted_classes.append({"step": len(predicted_classes) + 1, "class": corrected_class})
 
-                if corrected_class == last_class:
+                if corrected_class == last_class and corrected_class != 'None':
                     logger.info("No changes in class. Converged.")
                     break
                 else:
@@ -118,5 +118,8 @@ def loop(file_name, level, test=True, n_steps=1):
 
 
 if __name__ == "__main__":
-    loop(f'test', level=1, test=True, n_steps=6)
-    loop(f'train', level=1, test=False, n_steps=6)
+    #for i in range(6):
+    #    loop(f'{i}', level=2, test=True, n_steps=6)
+    #    loop(f'{i}', level=2, test=False, n_steps=6)
+
+    loop('test', level=1, test=True, n_steps=6)

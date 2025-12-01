@@ -21,10 +21,14 @@ docker run --runtime nvidia --gpus all \
 # Load and run the model:
 docker exec -it vllm_qwen25_7b_instinct bash -c "vllm serve Qwen/Qwen2.5-7B-Instruct-AWQ"
 
-docker stop vllm_qwen25_7b_instinct
-docker rm vllm_qwen25_7b_instinct
+docker stop vllm_qwen25_14b_instruct
+docker rm vllm_qwen25_14b_instruct
+
+docker stop vllm_qwen25_7b_instruct
+docker rm vllm_qwen25_7b_instruct
+
 docker run --runtime nvidia --gpus all \
-    --name vllm_qwen25_7b_instinct \
+    --name vllm_qwen25_7b_instruct \
     -v ~/.cache/huggingface:/root/.cache/huggingface \
     --env "HUGGING_FACE_HUB_TOKEN=" \
     -p 8000:8000 \
@@ -34,11 +38,57 @@ docker run --runtime nvidia --gpus all \
     --gpu-memory-utilization 0.85
 
 
+docker run --runtime nvidia --gpus all \
+    --name vllm_qwen25_14b_instruct \
+    -v ~/.cache/huggingface:/root/.cache/huggingface \
+    --env "HUGGING_FACE_HUB_TOKEN=" \
+    -p 8000:8000 \
+    vllm/vllm-openai:latest \
+    Qwen/Qwen2.5-14B-Instruct-AWQ \
+    --max-num-seqs 32 \
+    --gpu-memory-utilization 0.95
+
+docker run --runtime nvidia --gpus all \
+	--name vllm_qwen25_14b_instruct \
+	-v ~/.cache/huggingface:/root/.cache/huggingface \
+ 	--env "HUGGING_FACE_HUB_TOKEN=" \
+	-p 8000:8000 \
+	vllm/vllm-openai:latest \
+	Qwen/Qwen2.5-14B-Instruct-AWQ \
+    --port 8000
+
+docker stop vllm_qwen25_14b_instruct
+docker rm vllm_qwen25_14b_instruct
+docker run --runtime nvidia --gpus all \
+    --name vllm_qwen25_14b_instruct \
+    -v ~/.cache/huggingface:/root/.cache/huggingface \
+    --env "HUGGING_FACE_HUB_TOKEN=" \
+    -p 8000:8000 \
+    vllm/vllm-openai:latest \
+    Qwen/Qwen2.5-14B-Instruct-AWQ \
+    --port 8000 \
+    --gpu-memory-utilization 0.94 \
+    --max-num-seqs 16
+
+docker run --runtime nvidia --gpus all \
+    --name vllm_qwen25_14b_instruct \
+    -v ~/.cache/huggingface:/root/.cache/huggingface \
+    --env "HUGGING_FACE_HUB_TOKEN=" \
+    -p 8000:8000 \
+    vllm/vllm-openai:latest \
+    Qwen/Qwen2.5-14B-Instruct-AWQ \
+    --gpu-memory-utilization 0.75 \
+    --port 8000 \
+    --max-num-seqs 16 \
+
+
+docker exec -it vllm_qwen25_14b_instruct bash -c "vllm serve Qwen/Qwen2.5-14B-Instruct-AWQ"
+
 # Call the server using curl:
 curl -X POST "http://localhost:8000/v1/chat/completions" \
 	-H "Content-Type: application/json" \
 	--data '{
-		"model": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+		"model": "Qwen/Qwen2.5-14B-Instruct-AWQ",
 		"messages": [
 			{
 				"role": "user",
@@ -46,3 +96,14 @@ curl -X POST "http://localhost:8000/v1/chat/completions" \
 			}
 		]
 	}'
+
+
+
+
+Also use extra information about labels:
+IT and Natural Sciences is about Mathematics, Computer and information sciences, Physical sciences and astronomy, Chemical sciences, Earth and related environmental sciences, Biological sciences
+Engineering and Technology is about Civil engineering, Electrical engineering, electronic engineering, Mechanical engineering, Chemical engineering, Materials engineering, Medical engineering, Environmental engineering, Environmental biotechnology
+Medical and Health Sciences is about Basic medical research, Clinical medicine, Health sciences
+Agricultural Sciences is rare. Select it only when the text clearly and directly discusses agriculture, forestry, fisheries, livestock, animal or dairy production, or veterinary science.
+Social Sciences is about Psychology, Economics and business, Educational sciences, Sociology, Law, Political science, Social and economic geography, Media and communication
+Humanities is about History and archaeology, Languages and literature, Philosophy, ethics and religion, Art

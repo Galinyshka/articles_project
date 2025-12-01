@@ -4,7 +4,7 @@ import traceback
 import re
 import string
 from logger import PrettyLogger
-from config import SERVER_URL
+from config import SERVER_URL, MODEL_NAME
 
 logger = PrettyLogger("mylogger")
 
@@ -29,7 +29,7 @@ def send_request_to_llama_server(
             history = [{"role": "system", "content": system_prompt}] + history
 
     payload = {
-        "model": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+        "model": MODEL_NAME,
         "messages": history,
         "max_tokens": max_tokens,
         "temperature": temperature,
