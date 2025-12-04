@@ -42,7 +42,13 @@ def loop(file_name, level, test=True, n_steps=1):
         if level == 1:
             labels = list(json.load(f).values())
         else:
-            labels = list(json.load(f)[file_name[-1]].values())
+            data = json.load(f) 
+            labels = list(data[file_name[-1]].values())
+            labels2 = []
+            for i in range(6):
+                if i != int(file_name[-1]):
+                    labels2.extend(list(data[str(i)].values()))
+
 
     schema = {
         "type": "object",
@@ -56,7 +62,7 @@ def loop(file_name, level, test=True, n_steps=1):
     system_prompt = render_template("system.txt")
 
     # Открываем файл для дозаписи
-    out_file_path = os.path.join(data_root, f"pred_instruction_{file_name}.jsonl")
+    out_file_path = os.path.join(data_root, f"pred_5_{file_name}.jsonl")
     with open(file_path, "r") as f:
         articles = json.load(f)
 
@@ -118,8 +124,8 @@ def loop(file_name, level, test=True, n_steps=1):
 
 
 if __name__ == "__main__":
-    #for i in range(6):
-    #    loop(f'{i}', level=2, test=True, n_steps=6)
-    #    loop(f'{i}', level=2, test=False, n_steps=6)
+    for i in range(6):
+    #    loop(f'instruction_{i}', level=2, test=True, n_steps=6)
+        loop(f'{i}', level=2, test=True, n_steps=6)
 
-    loop('test', level=1, test=True, n_steps=6)
+   # loop('test', level=1, test=True, n_steps=6)

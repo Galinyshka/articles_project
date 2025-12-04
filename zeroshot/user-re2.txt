@@ -1,5 +1,4 @@
-You are given a list of only possible classification labels:
-
+You are given a list of possible classification labels:
 ```json
 {{ labels }}
 ```
@@ -11,7 +10,6 @@ The preliminary classification results for this article is provided below:
 ```
 json
 {{ previous }}
-```
 
 Follow these steps:
 Read the article (title, abstract, keywords).
@@ -19,4 +17,8 @@ Compare its main topics and methods to the label definitions above.
 Check whether the preliminary label is correct; if not, propose a correction and say why.
 Provide a brief, concrete justification for your final choice (no internal chain-of-thought).
 Return the result in the JSON format shown below.
-If you are not sure about label, choose None!
+
+Only if none of the labels from the first list seem suitable, try to find an appropriate label from this secondary list:
+```json
+{{ labels2 }}
+```
